@@ -1,10 +1,14 @@
 {
-    "name": "bogdaan/viber-bot-php",
-    "description": "Php bot interface to work with Viber API",
+    "name": "vireks/viber-bot-php",
+    "description": "Php bot interface to work with Viber API. Based on bogdaan/viber-bot-php.",
     "keywords": ["viber", "im", "bot"],
     "type": "library",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Viacheslav Reka",
+            "email": "viacheslavreka@gmail.com"
+        },
         {
             "name": "Novikov Bogdan",
             "email": "hcbogdan@gmail.com"
