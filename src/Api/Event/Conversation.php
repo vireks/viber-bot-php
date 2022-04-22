@@ -36,6 +36,13 @@ class Conversation extends Event
     protected $type;
 
     /**
+     * Conversation action
+     *
+     * @var bool
+     */
+    protected $subscribed;
+
+    /**
      * Get the value of Context information
      *
      * @return string
@@ -63,5 +70,15 @@ class Conversation extends Event
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Get subscribed status
+     *
+     * @return bool
+     */
+    public function getSubscribed()
+    {
+        return $this->subscribed;
     }
 }
