@@ -97,7 +97,7 @@ class Bot
     }
 
     /**
-     * Register subscrive event handler
+     * Register subscribe event handler
      *
      * @param  Closure $handler valid function
      * @return \Viber\Bot
@@ -106,6 +106,21 @@ class Bot
     {
         $this->managers[] = new Manager(function (Event $event) {
             return ($event instanceof \Viber\Api\Event\Subscribed);
+        }, $handler);
+
+        return $this;
+    }
+
+    /**
+     * Register unsubscribe event handler
+     *
+     * @param  Closure $handler valid function
+     * @return \Viber\Bot
+     */
+    public function onUnsubscribe(\Closure $handler)
+    {
+        $this->managers[] = new Manager(function (Event $event) {
+            return ($event instanceof \Viber\Api\Event\Unsubscribed);
         }, $handler);
 
         return $this;
