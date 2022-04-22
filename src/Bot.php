@@ -97,6 +97,21 @@ class Bot
     }
 
     /**
+     * Register message event handler
+     *
+     * @param  Closure $handler event handler
+     * @return \Viber\Bot
+     */
+    public function onMessage(\Closure $handler)
+    {
+        $this->managers[] = new Manager(function (Event $event) {
+            return ($event instanceof \Viber\Api\Event\Message);
+        }, $handler);
+
+        return $this;
+    }
+
+    /**
      * Register subscribe event handler
      *
      * @param  Closure $handler valid function
